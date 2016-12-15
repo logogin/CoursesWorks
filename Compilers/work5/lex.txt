@@ -1,0 +1,11 @@
+%%
+if	return IF;
+else	return ELSE;
+switch	return SWITCH;
+case	return case;
+default	return DEFAULT;
+for	return FOR;
+do	return DO;
+while	return WHILE;
+.	return yytext[0];
+%%

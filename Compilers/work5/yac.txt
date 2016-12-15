@@ -1,0 +1,21 @@
+%token IF,ELSE,CASE,SWITCH,DEFAULT,FOR,DO,WHILE
+%start exp
+%%
+exp : if_exp
+{printf("PARSED IF\n");}
+ |loop_exp
+{printf("PARSED LOOP\n");}
+if_exp : if_st
+ |switch_st
+switch_st : SWITCH
+ |CASE
+ |DEAFULT
+if_st : IF
+ | ELSE
+loop_exp : while_st
+ | for_st
+while_st : WHILE
+ | DO
+for_st : FOR
+%%
+#include "yy.lex.c"

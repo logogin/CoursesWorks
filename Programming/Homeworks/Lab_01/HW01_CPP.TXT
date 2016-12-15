@@ -1,0 +1,37 @@
+1.26 Write a program that inputs three integers from the keyboard,
+and prints the sum, averag, product, smallest and largest of
+these numbers. The screen dialogue should appear as follows:
+ _______________________________________________________________
+|								|
+|  Input three different integers: 13 27 14			|
+|  Sum is 54							|
+|  Average is 18						|
+|  Product is 4914						|
+|  Smallest is 13						|
+|  Largest is 27						|
+|_______________________________________________________________|
+
+1.27 There are program that reads in the radius of a circle and
+prints the circle's diametr, circumference, and area. Use the
+constant value 3.14159 for Pi. Do these calculations in output
+statments. (Note: In this chapter, we have discussed only integers
+constants and variables. In Chapter 3 we will discuss floating
+point numbers, i.e., values that can have decimal points.)
+
+1.30 Write a program that reads in five integers and determines
+and prints the lapgest and the smallest integers in the group.
+Use only the programming techniques you learned in this chapter.
+
+1.31 Write a program that reads integer and determines and prints
+whether it is odd or even. (Hint: Use the modulus operator. An
+even number is a multiple of two. Any multiple of two leaves a
+remainder of zero when divided by 2.)
+
+1.33 Write a program that reads in two integers and determines and
+prints if the first is a multiple of the second.
+(Hint: Use the modulus operator.)
+
+1.36 Write a program that inputs a five-digit number, separates the
+number into its individual digits.
+[ 42339         ]
+[ 4 2 3 3 9     ]

@@ -1,0 +1,16 @@
+template<class T>(, int Row, int Columns)
+class RGB(Matr)
+{
+private:
+	T Red;	// RGB<T> C;( Mat<char,3,4>)
+		// RGB<int> C;
+		// RGB<char> C;
+	T Blue;
+	T Green;
+
+	pixel<T> M[Row][Column]
+}
+
+template<class T> RGB<T>::RGB();
+
+Templaty ne pishutsja v cpp tolco v H-file ...
