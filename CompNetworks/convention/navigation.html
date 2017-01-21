@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/transitional.dtd">
+
+<HTML>
+<head>
+<title>navigation</title>
+<base target="introduction">
+</head>
+<body bgcolor=navyblue text=black link=orange vlink=yellow alink="#ffffff">
+<h1>navigation</h1>
+<table>
+<tr><td><a href="intro.html">home</a></td></tr>
+<tr><td><a href="forum.html">forum</a></td></tr>
+<tr><td><a href="ClientApplet.html">chat</a></td></tr>
+<tr><td><a href=/convention/servlet/MessageBoard>Message Board</a></td></tr>
+<tr><td><a href=/convention/servlet/articles>view articles</a></td></tr>
+<tr><td>
+<a href="https://localhost:8443/convention/registration.html">
+registration for presenters
+</a>
+</td></tr>
+<tr><td>
+<a href="https://localhost:8443/convention/registrationpart.html">
+registration for participants
+</a>
+</td></tr>
+<tr><td><a href="admin.html">administrator</a></td></tr>
+</table>
+<hr>
+<form action="/convention/servlet/login" method="post">
+<table bgcolor=lightgreen>
+<tr><td>MEMBERS</TD></TR>
+<tr>
+<td><b>username</b></td><td><INPUT TYPE="TEXT" NAME="usrname"></td>
+</tr>
+<tr>
+<td><b>password:<b></td> <td><INPUT TYPE="PASSWORD" NAME="psswd"></td> 
+</tr> 
+<tr>
+<td><INPUT TYPE="SUBMIT" VALUE="login"></td>
+</tr>    
+</table>
+</form>
+</body>
+</HTML>

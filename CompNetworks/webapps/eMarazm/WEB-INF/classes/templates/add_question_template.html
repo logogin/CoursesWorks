@@ -1,0 +1,135 @@
+<html>
+<!-- Creation date: 1/1/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title>Add new question form</title>
+<style>
+body{
+	font: 10pt Verdana,sans-serif;
+	color: navy;
+	}
+</style>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+var textArea=new String();
+var inputArea=new String();
+var choice_number=new Number(0);
+var testType=0;
+function addChoice()
+{
+	choice_number++;
+	var index_string=new String(choice_number.toString());
+	if (testType==0)
+		inputArea="<input type=\"radio\" name=\"answer\" id=\"answer"
+			+index_string+"\" value=\""+index_string+"\"/>"+
+			"<label for=\"answer"+index_string+"\">Correct answer</label><br>";
+	else
+		inputArea="<input type=\"checkbox\" name=\"answer"+index_string+"\" id=\"answer"
+			+index_string+"\""+
+			"<label for=\"answer"+index_string+"\">Correct answer</label><br>";
+	textArea="<br>Choice "+index_string
+		+" (<span class=\"comment\">255 symbols max</span>):<br><textarea name=\"choice"+index_string+"\""
+		+" id=\"choice"+index_string+"\" rows=\"5\""
+		+" atomicselection=\"false\" cols=\"50\" style=\"word-wrap: inherit\">"
+		+"</textarea><br>";
+	document.getElementById("theSpan"+index_string).innerHTML=textArea+inputArea;
+	if (choice_number==1)
+		document.getElementById("_removeChoice").style.display="inline";
+	
+	if (choice_number==5)
+		document.getElementById("_addChoice").style.display="none";
+}
+
+function removeChoice()
+{
+	
+	var index_string=new String((choice_number).toString(10));
+	document.getElementById("theSpan"+index_string).innerHTML="";
+	
+	if (choice_number==5)
+		document.getElementById("_addChoice").style.display="inline";
+	if (choice_number==1)
+		document.getElementById("_removeChoice").style.display="none";
+	choice_number--;
+}
+
+function validateForm ( )
+{
+	if (!document.question_form.question.value.length)
+	{
+		alert("Question is undefined!!!");
+		return false;
+	}
+	
+	if (choice_number==0)
+	{
+		alert("At least one choice must be specified!!!");
+		return false;
+	}
+	
+	flag=false;
+	for (i=1; i<=choice_number; i++)
+	{
+		var index_string=new String((i).toString());
+		if (document.getElementById("choice"+index_string).value=="")
+		{
+			alert("Choice number "+index_string+" is undefined!");
+			return false;
+		}
+		if (document.getElementById("answer"+index_string).checked)
+			flag=true;
+	}
+	
+	if (!flag)
+	{
+		alert("At least one answer must be correct!!!");
+		return false;
+	}
+	document.getElementById("amount").value=choice_number.toString();
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<center>
+<span class="comment">Add new question</span>
+<br>
+<span class="text">
+(<span class="text1" id="total"></span> total)
+<form name="question_form" action="addquestion" method="post" onsubmit="return validateForm()">
+Question (<span class="comment">255 symbols max</span>):
+<br>
+<textarea name="question" rows="5" atomicselection="false" cols="50" style="word-wrap: inherit">
+</textarea>
+<br>
+<span id="theSpan1">
+</span>
+<span id="theSpan2">
+</span>
+<span id="theSpan3">
+</span>
+<span id="theSpan4">
+</span>
+<span id="theSpan5">
+</span>
+<br>
+<input type="button" value="Add choice" id="_addChoice" onclick="addChoice()">
+<input type="button" value="Remove choice" id="_removeChoice" onclick="removeChoice()" style="display:none">
+<br>
+<br>
+<input type=checkbox name="lastQuestion" value="true" id="lastQuestion"><label for="lastQuestion">Last question</label>
+<br>
+<br>
+<input type="hidden" name="amount" id="amount">
+<input type="submit" value="Add question"/>
+<input type="reset" value="Reset"/>
+</span>
+</form>
+</center>
+</body>
+</html>

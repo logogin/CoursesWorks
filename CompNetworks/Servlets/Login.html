@@ -1,0 +1,48 @@
+<html>
+<!-- Creation date: 1/11/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Death">
+<script language="JavaScript">
+<!-- Script Begin
+function validateForm() 
+{
+	if (!document.login_form.userID.value.length)
+	{
+		alert("ID id undefined!!!");
+		return false;
+	}
+	if (!document.login_form.password.value.length)
+	{
+		alert("Password is undefined!!!");
+		return false;
+	}
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<center>
+<form name="login_form" action="servlet/login" method="post" onsubmit="return validateForm()">
+<table summary="" border="0">
+	<tr>
+		<td>ID:</td>
+		<td><input type="text" name="userID" maxlength="20"></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><input type="password" name="password" maxlength="14">
+      </td>
+	</tr>
+</table>
+<br>
+<input type="submit" value="Log in">
+<input type="reset" value="Reset">
+</form>
+</center>
+</body>
+</html>

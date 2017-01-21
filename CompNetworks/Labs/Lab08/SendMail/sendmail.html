@@ -1,0 +1,39 @@
+ <html><body><head><TITLE>Send Mail</TITLE>
+        <style type="text/css">
+        <!--
+        .in, INPUT, TEXTAREA{border-style: solid; border-width:1 ; font-family: Tahoma; color:black; font-size=13px;}
+        .bt{ border:0;  background=#C9D0E4; color:black; font-size=14px;}
+        body {font-family:tahoma;background: white;font-size=14px; align=center;}
+        table,{background=#8080C0;}
+        a:link {text-decoration: none; color: "black"}
+        a:visited {text-decoration: none;color: "black"}
+        a:active {text-decoration: none; color: "black"}
+        a:hover {text-decoration: underline; color: "black"}
+        -->
+        </style></head>
+<BODY>
+<P>&nbsp</P><P Align=Center>
+<FORM method=post action=servlet/Sendmail>
+<table cellspacing=0  bgcolor=lightskyblue width="300" cellpadding=3 style="WIDTH: 300px">
+<TR><TD Align=Center>To</TD>
+<TD Align=Center><input type = text name=To></TD></TR>
+<TR><TD Align=Center>CC</TD>
+<TD Align=Center><input type=text name =CC></TD></TR>
+<TR><TD Align=Center>From</TD>
+<TD Align=Center><input type=text name =From></TD></TR>
+<TR><TD Align=Center>Subject</TD>
+<TD Align=Center><input type=text name =subject></TD></TR>
+<TR><TD Align=Center>SMTP Host</TD>
+<TD Align=Center><input type=text name=smtphost></TD></TR>
+<TR><TD Align=Center>Text</TD>
+<TD Align=Center><textarea name =textbody ROWS=10 COLS=60>
+</textarea></TD></TR>
+<TR><TD Align=Center>Content Type</TD>
+<TD Align=Center><Select name=contenttype>
+<Option selected value="text/plain">Text/Plain
+<Option value="text/html">Text/HTML
+</SELECT></TD></TR>
+<TR><TD Align=Center><input type=submit value="Send Mail"></TD></TR>
+</TABLE></P>
+</FORM></BODY>
+</HTML>

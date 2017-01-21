@@ -1,0 +1,112 @@
+<html>
+<!-- Creation date: 1/12/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+function validateForm() 
+{
+	if (document.change_form.oldPassword.value=="")
+	{
+		alert("Password is undefined!!!");
+		return false;
+	}
+	
+	if (document.change_form.newPassword.value=="")
+	{
+		alert("Password is undefined!!!");
+		return false;
+	}
+	
+	if (document.change_form.newPassword.value!=document.getElementById("retypePassword").value)
+	{
+		alert("Passwords are not same!!!");
+		return false;
+	}
+	
+	if (document.change_form.firstName.value=="")
+	{
+		alert("First Name is undefined!!!");
+		return false;
+	}
+	
+	if (document.change_form.lastName.value=="")
+	{
+		alert("Last Name is undefined!!!");
+		return false;
+	}
+	
+	if (document.change_form.email.value=="")
+	{
+		alert("e-mail is undefined!!!");
+		return false;
+	}
+	
+	if (!document.change_form.publicData[0].checked&&!document.change_form.publicData[1].checked)
+	{
+		alert("Public access is undefined!!!");
+		return false;
+	}
+	
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<center>
+<form name="change_form" action="changeinfo" method="post" onsubmit="return validateForm()">
+<span class="comment">All fields are required!!!</span>
+<table summary="" border="0">
+	<tr>
+		<td>User ID: </td>
+		<td><span id="userID"></span></td>
+	</tr>
+	<tr>
+		<td>Old password: </td>
+		<td><input type="password" name="oldPassword" size="15" maxlength="14">
+      </td>
+	</tr>
+	<tr>
+		<td>New password: </td>
+		<td><input type="password" name="newPassword" id="newPassword" size="15" maxlength="14">
+      </td>
+	</tr>
+	<tr>
+		<td>Retype password: </td>
+		<td><input type="password" id="retypePassword" size="15" maxlength="14">
+      </td>
+	</tr>
+	<tr>
+		<td>First Name: </td>
+		<td><input type="text" name="firstName" value="" size="20" maxlength="20">
+      </td>
+	</tr>
+	<tr>
+		<td>Last Name: </td>
+		<td><input type="text" name="lastName" value="" size="20" maxlength="20"></td>
+	</tr>
+	<tr>
+		<td>E-mail: </td>
+		<td><input type="text" name="email" value="" size="20" maxlength="256"></td>
+	</tr>
+	<tr>
+		<td>Make info public? </td>
+		<td>	<input type="radio" name="publicData" value="1"> Yes
+      	<input type="radio" name="publicData" value="0"> No
+      </td>
+	</td>
+</table>
+<br>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+
+</form>
+</center>
+</body>
+</html>

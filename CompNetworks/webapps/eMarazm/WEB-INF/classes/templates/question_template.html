@@ -1,0 +1,55 @@
+<html>
+<!-- Creation date: 1/3/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+var amount=;
+var testType=;
+function validateForm() 
+{
+ 	if (testType==0)
+	{
+   for (i=0; i<amount; i++)
+    if (document.answer_form.answer[i].checked)
+				return true;
+	}
+	else
+	{
+	 for (i=0; i<amount; i++)
+	 {
+	  var index_string=new String((i+1).toString(10));
+		if (document.getElementsByName("answer"+index_string)[0].checked)
+			 return true;
+	 }
+	}
+	alert("Select your choice!!!");
+	return false;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<form name="answer_form" action="dotest" method="post" onsubmit="return validateForm()">
+<caption align="center"><span class="comment">Question <span class="text1" id="curQuestion"></span> of <span class="text1" id="total_number"></span></span>
+<br>
+<br>
+<table border="0" align="left">
+	<tr>
+		<td><h1><span class="text1" id="question"></span></h1></td>
+	</tr>
+	<span class="text" id="choices"></span>
+	<tr>
+		<td><input type="submit" value="Submit"/><input type="reset" value="Reset"/></td>
+	</tr>
+</table>
+<input type="hidden" name="testID" value="" />
+<input type="hidden" name="questionAnswer" value="answer" />
+</form>
+</body>
+</html>

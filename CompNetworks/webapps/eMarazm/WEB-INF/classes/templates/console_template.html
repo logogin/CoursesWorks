@@ -1,0 +1,47 @@
+<html>
+<!-- Creation date: 2/15/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expiris" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+function validateForm() 
+{
+	if (console_form.statement.value=="")
+	{
+		alert("Statement is undefined!!!");
+		return false;
+	}
+	return true;
+
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<center>
+<form name="console_form" action="console" method="post" onsubmit="return validateForm()">
+<table>
+	<tr>
+		<td>
+		Statement:<br>
+		<textarea cols="50" rows="3" name="statement"></textarea>
+		</td>
+		<td>
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+		</td>
+	</tr>
+</table>
+</form>
+<span class="text1"><b>Result</b></span>
+<br>
+<span id="result">
+</span>
+</center>
+</body>
+</html>

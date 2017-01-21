@@ -1,0 +1,157 @@
+<html>
+<!-- Creation date: 1/1/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Add new question form</title>
+<style>
+body{
+	font: 10pt Verdana,sans-serif;
+	color: navy;
+	}
+</style>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Death">
+<script language="JavaScript">
+<!-- Script Begin
+var choice_number=new Number(2);
+function addChoice()
+{
+	var index_string=new String(choice_number.toString(10));
+	var theDiv=document.getElementById("theDiv"+index_string).style;
+	theDiv.display="block";
+	
+	choice_number++;
+	if (choice_number==3)
+	{
+		theDiv=document.getElementById("remove_choice").style;
+		theDiv.display="inline";
+	}
+	if (choice_number==6)
+	{
+		theDiv=document.getElementById("add_choice").style;
+		theDiv.display="none";
+	}
+}
+
+function removeChoice()
+{
+	choice_number--;
+	var index_string=new String((choice_number).toString(10));
+	var theDiv=document.getElementById("theDiv"+index_string).style;
+	theDiv.display="none";
+	if (choice_number==2)
+	{
+		theDiv=document.getElementById("remove_choice").style;
+		theDiv.display="none";
+	}
+	if (choice_number==5)
+	{
+		theDiv=document.getElementById("add_choice").style;
+		theDiv.display="inline";
+	}
+}
+
+function validateForm ( )
+{
+	if (!document.question_form.question.value.length)
+	{
+		alert("Question is undefined!");
+		return false;
+	}
+	flag=false;
+	for (i=1; i<choice_number; i++)
+	{
+		var index_string=new String((i).toString(10));
+		if (!(document.getElementById("choice"+index_string)).value.length)
+		{
+			alert("Choice number "+index_string+" is undefined!");
+			return false;
+		}
+		if (document.getElementById("answer"+index_string).checked)
+			flag=true;
+	}
+	
+	if (!flag)
+	{
+		alert("At least one answer must be correct!");
+		return false;
+	}
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<div align="center">
+Add new question
+<br>
+<form name="question_form" action="addQuestion" method="post" enctype="text/plain" onsubmit="return validateForm()">
+Question (255 symbols max):
+<br>
+<textarea name="question" rows="5" title="Enter question text here" atomicselection="false" cols="50" style="word-wrap: inherit">
+</textarea>
+<br>
+<br>
+Choice 1 (255 symbols max):
+<br>
+<textarea name="choice1" rows="5" title="Enter choice text here" atomicselection="false" cols="50" style="word-wrap: inherit">
+</textarea>
+<br>
+<input type="checkbox" name="answer1" value="Correct answer"> Correct answer
+<br>
+<div id="theDiv2" style="display: none">
+	<br>
+	Choice 2 (255 symbols max):
+	<br>
+	<textarea name="choice2" rows="5" title="Enter choice text here" atomicselection="false" cols="50" style="word-wrap: inherit">
+	</textarea>
+	<br>
+	<input type="checkbox" name="answer2" value="Correct answer"> Correct answer
+	<br>
+</div>
+<div id="theDiv3" style="display: none">
+	<br>
+	Choice 3 (255 symbols max):
+	<br>
+	<textarea name="choice3" rows="5" title="Enter choice text here" atomicselection="false" cols="50" style="word-wrap: inherit">
+	</textarea>
+	<br>
+	<input type="checkbox" name="answer3" value="Correct answer"> Correct answer
+	<br>
+</div>
+<div id="theDiv4" style="display: none">
+	<br>
+	Choice 4 (255 symbols max):
+	<br>
+	<textarea name="choice4" rows="5" title="Enter choice text here" atomicselection="false" cols="50" style="word-wrap: inherit">
+	</textarea>
+	<br>
+	<input type="checkbox" name="answer4" value="Correct answer"> Correct answer
+	<br>
+</div>
+<div id="theDiv5" style="display: none">
+	<br>
+	Choice 5 (255 symbols max):
+	<br>
+	<textarea name="choice5" rows="5" title="Enter choice text here" atomicselection="false" cols="50" style="word-wrap: inherit">
+	</textarea>
+	<br>
+	<input type="checkbox" name="answer5" value="Correct answer"> Correct answer
+	<br>
+</div>
+<span id="add_choice">
+	<input type="button" value="Add choice" onclick="addChoice()">
+</span>
+<span id="remove_choice" style="display: none">
+	<input type="button" value="Remove choice" onclick="removeChoice()">
+</span>
+<br>
+<br>
+<input type="submit" value="Add question">
+<input type="reset" value="Reset">
+
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+Int A:
+ 109 110 111
+ 169 170 171
+ 119 120 121
+ 199 200 201
+ 455 456 457
+ 677 678 679
+ 577 578 579
+ 986 987 988
+Char B:
+ a b c
+ x y z
+ f g h
+ k l m
+ o p q
+ v w x
+ q r s
+ w x y
+Float C:
+ 1.56 2.56 3.56
+ 8.8 9.8 10.8
+ 5.87 6.87 7.87
+ 8.4 9.4 10.4
+ 0.5 1.5 2.5
+ 4.6 5.6 6.6
+ -0.75 0.25 1.25
+ -0.1 0.9 1.9
+String D:
+ `ab   abc   bcd
+ wxy   xyz   yz{
+ jkl   klm   lmn
+ opq   pqr   qrs
+ def   efg   fgh
+ lmn   mno   nop
+ hijk   ijkl   jklm
+ mnop   nopq   opqr

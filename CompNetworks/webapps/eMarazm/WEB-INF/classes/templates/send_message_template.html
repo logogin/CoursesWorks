@@ -1,0 +1,57 @@
+<html>
+<!-- Creation date: 2/1/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<script language="JavaScript">
+<!-- Script Begin
+function validateForm() 
+{
+	if (document.send_form.subject.value=="")
+	{
+		alert("Subject is undefined!!!");
+		return false;
+	}
+	if (document.send_form.message.value=="")
+	{
+		alert("Message text is undefined!!!");
+		return false;
+	}
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<center>
+<span class="comment">Send private message</span>
+<br>
+<form name="send_form" action="sendmessage" method="post" onsubmit="return validateForm()">
+<table border="0" summary="">
+	<tr>
+		<td>To: </td>
+		<td><span id="toName"></span></td>
+	</tr>
+	<tr>
+		<td>Subject: </td>
+		<td><input type="text" name="subject" size="53" maxlength="256">
+      </td>
+	</tr>
+	<tr>
+		<td valign="top">Message: </td>
+		<td><textarea name="message" cols="40" rows="5" wrap="virtual"></textarea>
+       </td>
+	</tr>
+</table>
+<br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+</center>
+</body>
+</html>

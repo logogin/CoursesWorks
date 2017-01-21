@@ -1,0 +1,32 @@
+#
+# configuration file for upload servlet
+#
+
+# show this page after uploading
+reply=/success.html
+
+# save file in this directory
+dir=c:\upload
+
+# if you need to send this file by email also
+# file will be transfered as an attachment
+
+# smtp port (default value is 25)
+#port=25
+
+# smtp host
+#host=your_smtp_host
+
+# your domain
+#domain=your_domain
+
+# Address From for letter
+#from=you@your_domain
+
+# Address to for letter
+#to=you@another_domain
+#
+# Subject line
+#subject=see attachment for uploaded file
+
+

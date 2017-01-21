@@ -1,0 +1,66 @@
+<html>
+<!-- Creation date: 1/17/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title></title>
+<style>
+body{
+	font: 10pt Verdana,sans-serif;
+	color: navy;
+	}
+.trigger
+{
+	cursor: pointer;
+	cursor: hand;
+}
+.branch
+{
+	display: none;
+	margin-left: 16px;
+}
+</style>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Death">
+<script language="JavaScript">
+<!-- Script Begin
+var openImg = new Image();
+	openImg.src = "./Images/TreeIcons/open.gif";
+var closedImg = new Image();
+	closedImg.src = "./Images/TreeIcons/closed.gif";
+function showBranch(branch)
+{
+	var objBranch = document.getElementById(branch).style;
+	if(objBranch.display=="block")
+		objBranch.display="none";
+	else
+ 		objBranch.display="block";
+}
+
+function swapFolder(img) 
+{
+	objImg = document.getElementById(img);
+	if(objImg.src!=openImg.src)
+	{
+		objImg.src = openImg.src;
+	}
+	else
+	{
+		objImg.src = closedImg.src;
+	}
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<div class="trigger" onClick="showBranch('topics'); swapFolder('tests')">
+	<img src="./Images/TreeIcons/closed.gif" border="0" id="tests">
+	Tests
+</div>
+	<span class="branch" id="topics"></span>
+<div class="trigger">	
+	<img src="./Images/TreeIcons/logoff.gif" border="0" id="tests">
+	Log off
+</div>
+</body>
+</html>

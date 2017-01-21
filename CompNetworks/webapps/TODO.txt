@@ -1,0 +1,46 @@
+bat file for key generation
+%JAVA_HOME%\bin\keytool -genkey -alias tomcat -keyalg RSA
+
+copy server.xml to $CATALINA_HOME/config
+OR enable SSL connector and eMarazm context
+
+copy database structute to SQL/data
+
+copy eMarazm to $CATALINA_HOME/webapps
+
+servlets list:
+addquestion.java
+changeinfo.java 
+chatboard.java
+chatmessage.java
+clearlog.java
+composetest.java
+console.java sql console
+deletemessage.java
+deletetest.java
+dotest.java 
+eMarazm.java base class
+login.java
+logoff.java
+profile.java
+register.java
+sendmail.java
+sendmessage.java
+showtree.java
+showusers.java
+showwellcome.java
+startcompose.java
+stats.java statistics
+testinfo.java
+userinfo.java
+viewlog.java
+viewmessage.java
+viewmessages.java 
+
+disable user access to folders SRC, templates, secure, Images
+Write full documentation
+Finilize project, create self-extracting archive
+include sqlyog
+Add your design or code.
+And TEST,TEST,TEST...
+All suggestions by ICQ...

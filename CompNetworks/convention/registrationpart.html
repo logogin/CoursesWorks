@@ -1,0 +1,45 @@
+<HTML>
+<body BGCOLOR="#FDF5E6">
+<H1 ALIGN="CENTER">REGISTRATION-participants</H1>
+<br> (please hit the refresh button to activate security)<br>
+<FORM ACTION="/convention/servlet/registrationpart" METHOD="POST">
+  <table>
+<tr>
+	<td align="left"><b>name of participant</b></td><td><INPUT TYPE="TEXT" NAME="name" ></td>
+</tr>
+<tr>
+	<td><b>email</b></td><td><INPUT TYPE="TEXT" NAME="email" width=200></td>
+</tr>
+<tr>
+	<td><b>choose username</b></td><td><INPUT TYPE="TEXT" NAME="usrname"></td>
+</tr>
+<tr>  
+<td><b>choose password:<b></td> 
+<td><INPUT TYPE="PASSWORD" NAME="psswd"></td> 
+</tr> 
+</table>
+<table>
+<tr>
+<td><b>Credit Card:</b><BR></td>
+</tr>
+<tr>
+<td><INPUT TYPE="RADIO" NAME="cardType"  VALUE="Visa">Visa</td>
+</tr>
+<tr>                   
+<td><INPUT TYPE="RADIO" NAME="cardType" VALUE="Master Card">Master Card</td> </tr>
+<tr>
+<td><INPUT TYPE="RADIO" NAME="cardType"  VALUE="Amex">American Express</td> 
+</tr>  
+<tr>              
+<td><INPUT TYPE="RADIO" NAME="cardType"  VALUE="Discover">Discover</td>  </tr>               
+<tr>  
+<td><b>Credit Card Number:<b></td> 
+<td><INPUT TYPE="PASSWORD" NAME="cardNum"></td> 
+</tr> 
+<tr>
+<td><INPUT TYPE="SUBMIT" VALUE="register"></td>
+</tr>    
+</table>
+</FORM>
+</body>
+</HTML>

@@ -1,0 +1,100 @@
+<html>
+<!-- Creation date: 1/26/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+var textArea=new String("Topic name (<span class=\"comment\">255 symbols max</span>):\n"+
+	"<br>\n"+
+	"<textarea name=\"topicName\" rows=\"5\" atomicselection=\"false\" cols=\"50\" style=\"word-wrap: inherit\">\n"+
+	"</textarea>\n"+
+	"<br>\n");
+function swapTopic() 
+{
+	if (document.start_form.newTopic.checked)
+	{
+		document.start_form.testTopic.disabled=true;
+		document.getElementById("topic").innerHTML=textArea;
+	}
+	else
+	{
+		document.start_form.testTopic.disabled=false;
+		document.getElementById("topic").innerHTML="";
+	}
+}
+
+function validateForm()
+{
+	if (document.start_form.testTitle.value=="")
+	{
+		alert("Test title is undefined!!!");
+		return false;
+	}
+	if (document.getElementById("newTopic").checked)
+	{
+		if (document.start_form.topicName.value=="")
+		{
+			alert("Topic name is undefined!!!");
+			return false;
+		}
+	}
+	else
+	{
+		if (document.start_form.testTopic.value=="")
+		{
+			alert("Test topic is undefined!!!");
+			return false;
+		}
+	}
+	
+	if (!document.start_form.testType[0].checked&&
+		document.start_form.testType[0].checked)
+	{
+		alert("Test type is undefined!!!");
+		return false;
+	}
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<SCRIPT FOR=window EVENT=onload LANGUAGE="JScript">
+    swapTopic();
+</SCRIPT>
+<center>
+<span class="comment">Define inital parameters</span>
+<form name="start_form" action="startcompose" method="post" onsubmit="return validateForm()">
+<span class="text">Test title (<span class="comment">255 symbols max</span>):
+<br>
+<textarea name="testTitle" rows="5" atomicselection="false" cols="50" style="word-wrap: inherit">
+</textarea>
+<br>
+<br>
+Test topic:
+<br>
+<select name="testTopic">
+</select>
+<br>
+<br>
+<input type="checkbox" name="newTopic" value="true" id="newTopic" uchecked onClick="swapTopic()"><label for="newTopic">Create new topic</label><br>
+<span id="topic">
+</span>
+<br>
+Test type:
+<br>
+<input type="radio" name="testType" value="0" id="single" checked><label for="single"> Single-choice</label>
+<input type="radio" name="testType" value="1" id="multi"><label for="multi"> Multi-choice</label><br>
+<br>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset" onclick="document.getElementById('topic').innerHTML=''; document.start_form.testTopic.disabled=false">
+</form>
+</span>
+</center>
+</body>
+</html>

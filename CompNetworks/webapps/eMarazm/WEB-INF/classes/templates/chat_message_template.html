@@ -1,0 +1,43 @@
+<html>
+<!-- Creation date: 1/31/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+function validateForm() 
+{
+	if (document.message_form.message.value=="")
+	{
+		alert("Message is undefined!!!");
+		return false;
+	}
+	if (document.message_form.nickName.value=="")
+	{
+		alert("Nick name is undefined!!!");
+		return false;
+	}
+
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<center>
+<form name="message_form" action="chatmessage" method="post" onsubmit="return validateForm()">
+<textarea name="message" cols="40" rows="2" wrap="virtual">
+</textarea>
+<br>
+<span class="comment"><b>Your nick:</b></span>
+<input type="text" name="nickName" value="" size="20" maxlength="256">
+<input type="submit" value="Send">
+<input type="button" value="Clear" onClick="document.message_form.message.value=''">
+</form>
+</center>
+</body>
+</html>

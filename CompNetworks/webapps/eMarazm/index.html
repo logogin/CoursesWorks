@@ -1,0 +1,62 @@
+<html>
+<!-- Creation date: 1/11/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="styles.css">
+<title>eDucation Project</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+function validateForm() 
+{
+	if (document.login_form.userID.value=="")
+	{
+		alert("ID is undefined!!!");
+		return false;
+	}
+	if (document.login_form.password.value=="")
+	{
+		alert("Password is undefined!!!");
+		return false;
+	}
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<center>
+<span class="title">Welcome to eDucation project</span>
+<br>
+<br>
+<form name="login_form" action="servlet/login" method="post" target=_parent onsubmit="return validateForm()">
+<table summary="" border="0">
+	<tr>
+		<td>ID:</td>
+		<td><input type="text" name="userID" maxlength="20"></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><input type="password" name="password"maxlength="14">
+      </td>
+	</tr>
+</table>
+<br>
+<input type="submit" value="Log in">
+<input type="reset" value="Reset">
+</form>
+<br>
+<br>
+<h2>
+<img src="./Images/chrome.gif">
+</h2>
+<b>New to our Project?</b>
+<br>
+<b><a href="servlet/register">Get a FREE eDucation account</a></b>
+<br>
+<b>with instant access to on-line tests, chat and more, more, more ...<b>
+</center>
+</body>
+</html>

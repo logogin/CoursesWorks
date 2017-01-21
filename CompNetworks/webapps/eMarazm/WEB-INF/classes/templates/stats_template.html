@@ -1,0 +1,193 @@
+<html>
+<!-- Creation date: 2/8/2004 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Expires" content="0">
+<link type="text/css" rel="STYLESHEET" href="/eMarazm/styles.css">
+<title></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script language="JavaScript">
+<!-- Script Begin
+function swapGrade() 
+{
+	var theSpan=document.getElementById("theSpan");
+	switch (document.stats_form.grade.value)
+	{
+		case "any": theSpan.innerHTML="";
+			break;
+		case "value": theSpan.innerHTML="<input type=\"text\" name=\"gradeValue\" size=\"3\" maxlength=\"10\"/>";
+			break;
+		case "range": theSpan.innerHTML="From: <input type=\"text\" name=\"gradeValue1\" size=\"3\""
+			+" maxlength=\"10\"/> To: <input type=\"text\" name=\"gradeValue2\" size=\"3\" maxlength=\"10\"/>";
+			break;
+	}
+}
+
+function validateForm()
+{
+	if (document.stats_form.testTitle.value=="")
+	{
+		alert("Test title is undefined!!!");
+		return false;
+	}
+	
+	if (document.stats_form.testTopicName.value=="")
+	{
+		alert("Test topic is undefined!!!");
+		return false;
+	}
+	
+	if (document.stats_form.testStatus.value=="")
+	{
+		alert("Test status is undefined!!!");
+		return false;
+	}
+	
+	if (document.stats_form.grade.value=="")
+	{
+		alert("Test grade is undefined!!!");
+		return false;
+	}
+	
+	if (document.stats_form.sort.value=="")
+	{
+		alert("Sorting is undefined!!!");
+		return false;
+	}
+	
+	if (document.stats_form.order.value=="")
+	{
+		alert("Sorting order is undefined!!!");
+		return false;
+	}
+	var flag=false;
+	for (i=0; i<2; i++)
+		if (document.stats_form.logic[i].checked)
+			flag=true;
+	if (!flag)
+	{
+		alert("Logic operator is undefined!!!");
+		return false;
+	}
+	
+	switch (document.stats_form.grade.value)
+	{
+		case "any":
+			break;
+		case "value":
+			if (document.stats_form.gradeValue.value=="")
+			{
+				alert("Grade value is undefined!!!");
+				return false;
+			}
+			var num=new Number(document.stats_form.gradeValue.value);
+			if (isNaN(num)||num.valueOf()<0||num.valueOf()>100)
+			{
+				alert("Grade value must be a number from 0 to 100");
+				return false;
+			}
+			break;
+		case "range":
+			if (document.stats_form.gradeValue1.value==""||document.stats_form.gradeValue2.value=="")
+			{
+				alert("Grade range is undefined!!!");
+				return false;
+			}
+			var num1=new Number(document.stats_form.gradeValue1.value);
+			var num2=new Number(document.stats_form.gradeValue2.value);
+			if (isNaN(num1)||num1<0||num1>100||isNaN(num2)||num2<0||num2>100||(num1>num2))
+			{
+				alert("Grade value must be a number from 0 to 100");
+				return false;
+			}
+			break;
+	}
+	return true;
+}
+//  Script End -->
+</script>
+</head>
+<body>
+<span class="text">
+<center>
+<span class="comment"><b>Get statistics</b></span>
+<br>
+<form name="stats_form" action="stats" method="post" onsubmit="return validateForm()">
+Show students
+<br>
+where
+<br>
+<br>
+<table border="0" summary="">
+<thead>
+<tr>
+		<td>Test title</td>
+		<td>Test topic</td>
+</tr>
+<tbody>
+<tr>
+	<td><select name="testTitle">
+     	<option value="any"> Any</option>
+     	<span id="testTitle">
+		</span>
+     </select>
+     </td>
+	<td><select name="testTopicName">
+     	<option value="any"> Any</option>
+     	<span id="testTopicName">
+		</span>
+     </select>
+     </td>
+</tr>
+</table>
+<br>
+Test status:
+<select name="testStatus">
+   	<option value="any"> Any</option>
+   	<option value="0"> Not finished</option>
+   	<option value="1"> Finished</option>
+</select>
+
+<br>
+<br>
+	<input type="radio" name="logic" value="AND" checked> AND
+	<input type="radio" name="logic" value="OR"> OR
+<!--	<input type="radio" name="logic1" value="NOT"> NOT
+-->
+<br>
+<br>
+Grade is:	
+<select name="grade" onchange="swapGrade()">>
+  	<option value="any"> Any</option>
+   	<option value="value"> Value</option>
+	<option value="range"> Range</option>
+</select>
+<span id="theSpan">
+</span>
+<br>
+<br>
+Sort by: 
+<select name="sort">
+  	<option value="name"> Student name</option>
+   	<option value="testTitle"> Test title</option>
+	<option value="testTopicName"> Topic name</option>
+	<option value="testDate"> Date</option>
+	<option value="grade"> Grade</option>
+</select>
+<br>
+<br>
+Sorting order: 
+<select name="order">
+  	<option value="ASC"> Increasing</option>
+   	<option value="DESC"> Descending</option>
+</select>
+<br>
+<br>
+<input type="submit" value="Submit Query">
+<input type="reset" value="Reset" onclick="document.getElementById('theSpan').innerHTML=''">
+</form>
+</center>
+</span>
+</body>
+</html>

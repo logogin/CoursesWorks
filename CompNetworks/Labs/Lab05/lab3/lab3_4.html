@@ -1,0 +1,24 @@
+<HTML>
+<HEAD> 
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Beginning of JavaScript - >
+function changelocation (chosen_url)
+{
+if (chosen_url)
+window.location=chosen_url;
+}
+
+// - End of JavaScript - -->
+</SCRIPT> 
+</HEAD>
+<BODY bgcolor="beige"> 
+<form>
+<select name=url onchange="changelocation(url.value)">
+<option>Choose your location</option>
+<option value='http://www.nace.ac.il'>Nace</option>
+<option value='http://www.tcb.ac.il'>TCB</option>
+<option value='http://java.sun.com'>Java Sun</option>
+</select>
+</form> 
+</BODY>
+</HTML> 

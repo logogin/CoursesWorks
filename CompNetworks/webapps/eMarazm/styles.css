@@ -1,0 +1,10 @@
+@charset "iso-8859-1";
+/* Creation date: 2/16/2004 */
+body {font: 8pt tahoma; color: 26225E; background-color: F4F4F4}
+input {font: 10pt tahoma; color: 26225E;}
+td {font: 10pt tahoma; font-weight: bold; color: 26225E;}
+.title {font: 20pt tahoma; color: 990000;}
+.comment {font: 10pt tahoma; color: 990000;}
+.text {font: 8pt tahoma; font-weight: bold; color: 64657D;}
+.text1 {font: 10pt tahoma; font-weight: bold; color: 000099;}
+.thead {font: 10pt tahoma; color: white; font-weight: bold; background-color:81829E; text-align: center }
